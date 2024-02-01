@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scripts</title>
+    <style>
+       body {
+      font-family: "Arial", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    #form-container {
+      max-width: 400px;
+      width: 100%;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      text-align: left;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #007bff;
+    }
+
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 15px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    button {
+      display: block;
+      border-radius: 5px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.1s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+.fit-picture {
+  width: 40px;
+}
+    .copied {
+      background-color: #28a745;
+    }
+    </style>
+   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/708/708881.png" type="image/x-icon" />
+
+  </head>
+  <body>
+    <h1> <img
+  class="fit-picture"
+  src="https://cdn-icons-png.flaticon.com/512/708/708881.png"
+  alt="Grapefruit slice atop a pile of other slices" /> Scripts</h1>
+
+    <section>   
+        <h1>Atendimento</h1>
+ 
+      <div class="card">
+        <p id="conteudo">
+          Por falta de retorno do cliente, o chat se encerra.....
+        </p>
+        <button onclick="copiar('conteudo', this)">Copiar</button>
+      </div>
+<div class="card">
+        <p id="conteudo00">
+         🧐 Qual o numero do seu pedido ? 
+        </p>
+        <button onclick="copiar('conteudo00', this)">Copiar</button>
+      </div>
+ <div class="card">
+ <div class="card">
+   
+        <p id="conteudo13">
+         Aguarde um momento enquanto verifico seu pedido. Por gentileza, 
+         mantenha o chat ativo para permanecer comigo. Já retorno com mais informações. 😉
+
+        </p>
+        <button onclick="copiar('conteudo13', this)">Copiar</button>
+      </div>
+      <div class="card">
+        <p id="conteudo0">Fora isso, posso ajudar em mais alguma coisa?</p>
+        <button onclick="copiar('conteudo0', this)">Copiar</button>
+      </div>
+
+      <div class="card">
+        <p id="conteudo1">
+          "Deixe-me pedir uma coisa: gostaria que avaliasse nosso atendimento.
+           É muito importante receber seu feedback para que possamos melhorar e atender às 
+           suas expectativas! 😊❤
+        </p>
+        <button onclick="copiar('conteudo1', this)">Copiar</button>
+      </div>
+      <h1>Carina</h1>
+      <div class="card">
+        <p id="conteudo2">
+          Correção: "O Carrefour agradece sua atenção e seu contato. Desejamos a você e sua família um 
+       excelente dia! Apenas peço a gentileza de permanecer aqui no chat para avaliar meu atendimento. Em caso de eventualidades, sinta-se à vontade para entrar em contato conosco novamente. Será sempre muito bem-vindo! Saiba que foi um prazer atendê-lo! 💖🤙​ Lembrando que, pelo site (área logada) em 'Minha Conta', você consegue acessar as informações de cancelamento, devolução, troca e baixar a nota fiscal, se necessário. Tudo de forma mais dinâmica.
+        Chame a Carina no WhatsApp (11)3004-2222 ou acesse nosso site http://www.carrefour.com.br.💙
+        </p>
+        <button onclick="copiar('conteudo2', this)">Copiar</button>
+      </div>
+      <h1>LPGD</h1>
+      <div class="card">
+        <p id="conteudo3">
+          Por questão de segurança e procedimento da LGPD, lei geral de proteção
+          de dados, eu preciso do seu CPF, e-mail, nome completo e telefone pode
+          me informar por gentileza?​​​ 😃
+        </p>
+        <button onclick="copiar('conteudo3', this)">Copiar</button>
+      </div>
+      <h1>"Prazo Cartão</h1>
+      <div class="card">
+        <p id="conteudo4">
+          Conforme combinado, realizamos o cancelamento do pedido x no valor x.
+          Nós do Carrefour já devolvemos o valor para a administradora do seu
+          cartão. Caso precise, entre em contato com o seu banco para mais
+          informações sobre o estorno."
+        </p>
+        <button onclick="copiar('conteudo4', this)">Copiar</button>
+      </div>
+      <h1>Tratar Cartão</h1>
+      <div class="card">
+        <p id="conteudo5">
+          O cartão Carrefour diz respeito ao banco Carrefour e nesse caso eles
+          são um departamento diferente do nosso , porem você pode entrar em
+          contato com eles através do numero (11)3004-2222 , basta ligar e pedir
+          pra ser transferida para o departamento do banco Carrefour 😊😊🌹
+        </p>
+        <button onclick="copiar('conteudo5', this)">Copiar</button>
+      </div>
+      <div class="card">
+        <p id="conteudo6">
+          Nesse caso o valor ainda não está com o Carrefour, o prazo para
+          aprovação do pagamento ou negativa é de até 48h úteis, o valor pode
+          estar reservado em seu cartão mas está em análise por sua
+          administradora do cartão ou pela bandeira do cartão. Oriento a
+          aguardar o prazo ou se desejar maiores informações que entre em
+          contato com a administradora de seu cartão.​
+        </p>
+        <button onclick="copiar('conteudo6', this)">Copiar</button>
+      </div>
+      <div class="card">
+        <p id="conteudo7">
+          Poxa que pena, não consigo te ajudar nesta situação, pois esse canal
+          de atendimento é exclusivo sobre o site Carrefour. Para que você possa
+          obter esta informação, peço a gentileza que entre em contato com o
+          Banco Carrefour através do telefone (11)3004 2222 e selecionar a opção
+          2, de segunda a sábado, das 8h às 21h ou caso desejar você também pode
+          acessar o chat referente ao Cartão Carrefour através do link:
+          https://www.carrefoursolucoes.com.br/#/login , lá vai ser atendido da
+          melhor forma possível .😊😊​​
+        </p>
+        <button onclick="copiar('conteudo7', this)">Copiar</button>
+      </div>
+      <h1>Consumidor.gov</h1>
+      <div class="card">
+        <p id="conteudo8">
+          Verifiquei a sua solicitação e encontrei um contato com o
+          Consumidor.gov, tendo sido este referente a nossa solicitação, o nosso
+          alcance a novas informações fica limitado 😢💔 Com isso se faz
+          necessário aguardar o retorno deles por e-mail para você, não se
+          preocupe pois esse retorno deve ser em breve já te situando do
+          andamento do caso, okay?!
+        </p>
+        <button onclick="copiar('conteudo8', this)">Copiar</button>
+      </div>
+      <div class="card">
+        <h1>Procon</h1>
+        <p id="conteudo9">
+          Com as informações que eu encontrei do andamento do seu protocolo,
+          pude ver que o Procon foi acionado, com isso infelizmente ficamos
+          limitados quanto a novas informações, como o caso já consta com eles
+          nós paramos de receber atualizações recentes, muitas das vezes
+          limitando ao contato direto entre este órgão e cliente, com isso peço
+          por gentileza que aguarde o retorno com a resolutiva que deverá
+          ocorrer muito em breve!
+        </p>
+        <button onclick="copiar('conteudo9', this)">Copiar</button>
+      </div>
+      <h1>Reclame Aqui</h1>
+      <div class="card">
+        <p id="conteudo10">
+          Ao analisar aqui a situação, notei que houve contato com o Reclame
+          Aqui, certo? Sendo assim infelizmente nós ficamos de fora das
+          atualizações do seu caso e fico impossibilitada de abrir protocolo
+          para te ajudar referente a esse caso, pois se abrir será
+          automaticamente fechado por eles 😢💔 Porém não precisa se preocupar,
+          você vai ser atendida por eles, será priorizado, tenho certeza!! E
+          assim que tudo estiver certo, o próprio Reclame aqui dará um retorno
+          sobre a situação. Vou deixar uma observação no seu protocolo que
+          entrou em contato e deseja um retorno, e eu farei o possível para que
+          seja o mais breve este retorno. peço que aguarde.
+        </p>
+        <button onclick="copiar('conteudo10', this)">Copiar</button>
+      </div>
+      <h1>Extras para críticos</h1>
+      <div class="card">
+        <p id="conteudo11">
+          Entendo que já tem algum tempo, porém realmente, dada a situação
+          ficamos sem essas novas informações, com isso se faz necessário
+          aguardar, porém, caso seja interessante, você pode acompanhar através
+          do seu e-mail, periodicamente para encontrar possíveis novos contatos,
+          com boas e novas informações certo?!​
+        </p>
+        <button onclick="copiar('conteudo11', this)">Copiar</button>
+      </div>
+     <h1> (PIX, Boleto) </h1>
+       <div class="card">
+   
+        <p id="conteudo12">
+          Para todos os pedidos que são pagos através de PIX ou boleto bancário o 
+      reembolso é realizado através de transferência bancária, sendo assim precisarei dos seguintes dados abaixo:
+
+       <br>
+       Banco:
+       <br>
+       Conta corrente ou poupança:
+       <br>
+      Digito da conta:
+       <br>
+       Agência:​
+
+        </p>
+        <button onclick="copiar('conteudo12', this)">Copiar</button>
+
+      </div>
+   <h1 class="card" > Casos Críticos </h1>
+        <div id="form-container">
+    <label for="nomeCliente">Nome do Cliente:</label>
+    <input type="text" id="nomeCliente" placeholder="Informe o nome do cliente" required>
+
+    <label for="cpf">CPF:</label>
+    <input type="text" id="cpf" placeholder="Informe o CPF" required>
+
+    <label for="motivo">Motivo Crítico:</label>
+    <input type="text" id="motivo" placeholder="Informe o motivo crítico" required>
+
+    <label for="protocolo">Protocolo do Caso:</label>
+    <input type="text" id="protocolo" placeholder="Informe o número do protocolo" required>
+
+    <label for="dataProtocolo">Data de Criação do Protocolo:</label>
+    <input type="date" id="dataProtocolo" required>
+
+    <button onclick="gerarTexto()">Gerar Texto</button>
+
+    <div id="output"></div>
+
+    <div id="nomeAssinatura">
+      <label for="nomeAssinaturaInput">Sua Assinatura:</label>
+      <input type="text" id="nomeAssinaturaInput" placeholder="Informe a sua assinatura" required>
+    </div>
+
+    <button id="copyButton" onclick="copiarParaAreaTransferencia()">Copiar</button>
+  </div>
+
+
+  <script>
+    function gerarTexto() {
+      var nomeCliente = document.getElementById('nomeCliente').value;
+      var cpf = document.getElementById('cpf').value;
+      var motivo = document.getElementById('motivo').value;
+      var protocolo = document.getElementById('protocolo').value;
+      var dataProtocolo = new Date(document.getElementById('dataProtocolo').value);
+
+      var options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+      var dataFormatada = dataProtocolo.toLocaleDateString('pt-BR', options);
+
+      var texto = `Prezada Supervisão,\n\n`;
+      texto += `Gostaríamos de informar sobre a situação do cliente ${nomeCliente}, cujo CPF é ${cpf}.\n`;
+      texto += `Identificamos um motivo crítico relacionado ao seguinte problema: "${motivo}".\n`;
+      texto += `O caso foi devidamente registrado com o protocolo ${protocolo}, criado em ${dataFormatada}.\n\n`;
+      texto += `Atento, ${document.getElementById('nomeAssinaturaInput').value}\n`;
+
+      document.getElementById('output').innerText = texto;
+      document.getElementById('form-container').style.transform = 'translateY(-50px)';
+    }
+
+    function copiarParaAreaTransferencia() {
+      var outputText = document.getElementById('output');
+      var texto = outputText.innerText;
+
+      var textarea = document.createElement('textarea');
+      textarea.value = texto;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+alert('Texto copiado para a área de transferência!');
+      
+    }
+  </script>
+
+      <script>
+        function copiar(id, button) {
+          var conteudo = document.getElementById(id);
+          var texto = conteudo.innerText;
+          var textarea = document.createElement("textarea");
+          textarea.value = texto;
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand("copy");
+          document.body.removeChild(textarea);
+
+          button.innerText = "Copiado";
+          button.classList.add("copied");
+
+          setTimeout(function () {
+            button.innerText = "Copiar";
+            button.classList.remove("copied");
+          }, 2000);
+        }
+      </script>
+    </section>
+  </body>
+</html>
