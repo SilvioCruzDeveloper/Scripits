@@ -15,7 +15,7 @@
       }
 
       #form-container {
-        max-width: 50%;
+        max-width: 80%;
         width: 100%;
         padding: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -337,7 +337,7 @@
           Agência:​
         </p>
         <button onclick="copiar('20', this)">Copiar</button>
-        <div class="card" id="container">
+        <div id="container">
           <!-- Content will be dynamically added here -->
         </div>
       </div>
@@ -347,6 +347,7 @@
           Adicionar Bloco
         </button>
       </div>
+
       <h1 class="card">Casos Críticos</h1>
       <div id="form-container">
         <label for="nomeCliente">Nome do Cliente:</label>
@@ -356,10 +357,8 @@
           placeholder="Informe o nome do cliente"
           required
         />
-
         <label for="cpf">CPF:</label>
         <input type="text" id="cpf" placeholder="Informe o CPF" required />
-
         <label for="motivo">Motivo Crítico:</label>
         <input
           type="text"
@@ -367,7 +366,6 @@
           placeholder="Informe o motivo crítico"
           required
         />
-
         <label for="protocolo">Protocolo do Caso:</label>
         <input
           type="text"
@@ -375,14 +373,10 @@
           placeholder="Informe o número do protocolo"
           required
         />
-
         <label for="dataProtocolo">Data de Criação do Protocolo:</label>
         <input type="date" id="dataProtocolo" required />
-
         <button onclick="gerarTexto()">Gerar Texto</button>
-
         <div id="output"></div>
-
         <div id="nomeAssinatura">
           <label for="nomeAssinaturaInput">Sua Assinatura:</label>
           <input
@@ -392,11 +386,67 @@
             required
           />
         </div>
-
         <button id="copyButton" onclick="copiarParaAreaTransferencia()">
           Copiar
         </button>
       </div>
+
+      <script>
+        function gerarTexto() {
+          // Obter os valores dos campos de entrada
+          var nomeCliente = document.getElementById("nomeCliente").value;
+          var cpf = document.getElementById("cpf").value;
+          var motivo = document.getElementById("motivo").value;
+          var protocolo = document.getElementById("protocolo").value;
+          var dataProtocolo = document.getElementById("dataProtocolo").value;
+          var nomeAssinatura = document.getElementById(
+            "nomeAssinaturaInput"
+          ).value;
+
+          // Formatando a data para o padrão brasileiro
+          var dataFormatada = new Date(dataProtocolo).toLocaleDateString(
+            "pt-BR"
+          );
+
+          // Construir o texto do caso crítico no formato de e-mail
+          var textoCasoCritico = "Prezado(a) Supervisor(a),\n\n";
+          textoCasoCritico +=
+            "Gostaria de relatar um caso crítico ocorrido recentemente envolvendo o cliente " +
+            nomeCliente +
+            ".\n\n";
+          textoCasoCritico += "Detalhes do caso:\n";
+          textoCasoCritico += "- CPF do cliente: " + cpf + "\n";
+          textoCasoCritico += "- Motivo crítico: " + motivo + "\n";
+          textoCasoCritico += "- Protocolo do caso: " + protocolo + "\n";
+          textoCasoCritico +=
+            "- Data de criação do protocolo: " + dataFormatada + "\n\n";
+          textoCasoCritico +=
+            "Por favor, tome as medidas necessárias para resolver este problema o mais rápido possível.\n\n";
+          textoCasoCritico += "Atenciosamente,\n";
+          textoCasoCritico += nomeAssinatura;
+
+          // Exibir o texto gerado na área de saída
+          document.getElementById("output").innerText = textoCasoCritico;
+        }
+
+        function copiarParaAreaTransferencia() {
+          // Selecionar o texto gerado na área de saída
+          var texto = document.getElementById("output");
+          var selecionador = document.createRange();
+          selecionador.selectNode(texto);
+          window.getSelection().removeAllRanges();
+          window.getSelection().addRange(selecionador);
+
+          // Copiar o texto selecionado para a área de transferência
+          document.execCommand("copy");
+
+          // Limpar a seleção
+          window.getSelection().removeAllRanges();
+
+          // Mostrar mensagem de sucesso
+          alert("Texto copiado para a área de transferência!");
+        }
+      </script>
 
       <script>
         function adicionarBloco() {
