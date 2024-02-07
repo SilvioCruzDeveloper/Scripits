@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciador de Protocolos</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #1f1f1f; /* Cor de fundo escura */
+        color: #ffffff; /* Cor do texto */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        max-width: 80%; /* Largura máxima do formulário */
+        width: 100%;
+        padding: 20px;
+      }
+
+      .card {
+        background-color: #333333; /* Cor de fundo para o cabeçalho */
+        color: #ffffff; /* Cor do texto para o cabeçalho */
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+
+      #form-container {
+        background-color: #333333; /* Cor de fundo para o contêiner do formulário */
+        padding: 20px;
+        border-radius: 5px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input[type="text"],
+      input[type="date"],
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 3px;
+        background-color: #555555; /* Cor de fundo para os campos de entrada e botões */
+        color: #ffffff; /* Cor do texto para os campos de entrada e botões */
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #777777; /* Cor de fundo quando o botão é destacado */
+      }
+
+      #output {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        background-color: #444444; /* Cor de fundo para a área de saída */
+        color: #ffffff; /* Cor do texto para a área de saída */
+        font-size: 16px;
+        white-space: pre-wrap; /* Quebra de linha preservada */
+      }
+
+      #nomeAssinatura {
+        margin-top: 20px;
+      }
+
+      .alert {
+        color: #ff0000; /* Cor do texto para mensagens de alerta */
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1 class="card">Gerenciador de Protocolos</h1>
+        <div id="form-container">
+          <label for="nomeCliente">Nome do Cliente:</label>
+          <input
+            type="text"
+            id="nomeCliente"
+            placeholder="Nome do cliente"
+            required
+          />
+          <label for="cpf">CPF:</label>
+          <input type="text" id="cpf" placeholder="CPF" required />
+          <label for="protocolo">Protocolo do Caso:</label>
+          <input
+            type="text"
+            id="protocolo"
+            placeholder="Número do protocolo"
+            required
+          />
+          <label for="dataProtocolo">Data de Criação do Protocolo:</label>
+          <input type="date" id="dataProtocolo" required />
+          <button onclick="gerarTexto()">Gerar Texto</button>
+          <div id="output"></div>
+          <div id="nomeAssinatura">
+            <label for="nomeAssinaturaInput">Sua Assinatura:</label>
+            <input
+              type="text"
+              id="nomeAssinaturaInput"
+              placeholder="Sua assinatura"
+              required
+            />
+          </div>
+          <button id="copyButton" onclick="copiarParaAreaTransferencia()">
+            Copiar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function gerarTexto() {
+        // Obter os valores dos campos de entrada
+        var nomeCliente = document.getElementById("nomeCliente").value;
+        var cpf = document.getElementById("cpf").value;
+        var protocolo = document.getElementById("protocolo").value;
+        var dataProtocolo = document.getElementById("dataProtocolo").value;
+        var nomeAssinatura = document.getElementById(
+          "nomeAssinaturaInput"
+        ).value;
+
+        // Formatando a data para o padrão brasileiro
+        var dataFormatada = new Date(dataProtocolo).toLocaleDateString("pt-BR");
+
+        // Obtendo a hora atual
+        var horaAtual = new Date().toLocaleTimeString("pt-BR");
+
+        // Construir o texto do protocolo
+        var textoProtocolo = "Nome do Cliente: " + nomeCliente + "\n";
+        textoProtocolo += "CPF: " + cpf + "\n";
+        textoProtocolo += "Protocolo do Caso: " + protocolo + "\n";
+        textoProtocolo +=
+          "Data de Criação do Protocolo: " +
+          dataFormatada +
+          " às " +
+          horaAtual +
+          "\n\n";
+        textoProtocolo += "Assinatura: " + nomeAssinatura;
+
+        // Exibir o texto gerado na área de saída
+        document.getElementById("output").innerText = textoProtocolo;
+      }
+
+      function copiarParaAreaTransferencia() {
+        // Selecionar o texto gerado na área de saída
+        var texto = document.getElementById("output");
+        var selecionador = document.createRange();
+        selecionador.selectNode(texto);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(selecionador);
+
+        // Copiar o texto selecionado para a área de transferência
+        document.execCommand("copy");
+
+        // Limpar a seleção
+        window.getSelection().removeAllRanges();
+
+        // Mostrar mensagem de sucesso
+        alert("Texto copiado para a área de transferência!");
+      }
+    </script>
+  </body>
+</html>
